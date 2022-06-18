@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="title" content="Stammdaten geleaked?" />
+        <meta name="description" content="Auf dieser Website können Sie überprüfen, ob Daten zu einer Person im Leak vom Hackerangriff durch ALPHV/Black Cat auf das Land Kärnten enthalten sind." />
+        <meta name="author" content="" />
+        <title>Stammdaten geleaked?</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron mt-5">
+                <h1 class="display-4">Stammdaten geleaked?</h1>
+                <p class="lead">Auf dieser Website können Sie überprüfen, ob Daten zu einer Person im Leak vom Hackerangriff durch ALPHV/Black Cat auf das Land Kärnten enthalten sind. Momentan werden nur die Stammdaten-Formulare ("Visa"-Ordner) berücksichtigt.</p>
+                <hr>
+                <p>Bitte geben Sie hier Ihre Daten ein:</p>
+                <form id="form">
+                    <div class="row input-group-newsletter mt-3">
+                        <div class="col"><input class="form-control" id="firstname" type="text" placeholder="Vorname(n)" aria-label="Vorname(n)"></div>
+                    </div>
+                    <div class="row input-group-newsletter mt-3">
+                        <div class="col"><input class="form-control" id="lastname" type="text" placeholder="Nachname(n)" aria-label="Nachname(n)"></div>
+                    </div>
+                    <div class="row input-group-newsletter mt-3">
+                        <div class="col"><input class="form-control" id="bdsv" type="text" placeholder="Geburtsdatum (TT.MM.JJJJ) od. SVNR (4-stellig)" aria-label="Geburtsdatum (TT.MM.JJJJ) od. SVNR (4-stellig)"></div>
+                    </div>
+                    <div class="row input-group-newsletter mt-3">
+                        <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="button" onclick="checkHash()">Suchen</button></div>
+                    </div>
+                </form>
+                <div class="alert mt-2 mb-2" role="alert" id="result">
+                </div>
+                <p><strong>Betroffen - was nun?</strong> Falls Ihre Daten im Leak enthalten sind, müssen Sie damit rechnen, dass Unbefugte Ihre Stammdaten (Name, Adresse, diverse Kontaktmöglichkeiten) sowie je nach Verfahren weitere Daten zu kriminellen Zwecken nutzen könnten. Achten Sie daher verstärkt auf Anzeichen von Identitätsdiebstahl und Phishing. Bei weiteren Fragen wenden Sie sich bitte direkt an das <a href="https://www.ktn.gv.at/">Land Kärnten</a> oder an die <a href="https://www.dsb.gv.at/">Datenschutzbehörde</a>.
+                <hr>
+                <p><strong>So funktioniert es:</strong> Aus Datenschutzgründen werden Ihre Daten nur lokal verarbeitet. Das bedeutet, Ihre Eingaben werden direkt im Browser überprüft und nicht an ein Backend geschickt. Damit die Daten aller Betroffenen nicht im Klartext in der Website auffindbar sind, wurden Vorname(n) und Nachname(n) sowie Geburtsdatum beziehungsweise die ersten 4 Stellen der SVNR aus den Stammdatenblättern extrahiert, normalisiert (Entfernung von Sonderzeichen, Akzentuierungen etc.) und diverse Kombinationen aus Vornamen und Nachnamen mit oder ohne Geburtsdatum / SVNR erstellt. Diese Zeichenkombinationen sind als Hashes (SHA-512) im Quellcode dieser Website enthalten. Ihre Eingaben werden mit den so berechneten Hash-Werten verglichen, Ihnen wird lediglich angezeigt, ob es einen Treffer gibt oder nicht. Abgesehen von diesen Vergleichswerten sind keine weiteren personenbezogenen Daten im Klartext oder in gehashter Form auf dieser Seite enthalten.</p>
+                <p>Die Eingabe von Vorname(n) <strong>und</strong> Nachname(n) sind zwingend erforderlich, um ein korrektes Ergebnis zu erhalten. Falls es bei Eingabe von Vor- und Nachname(n) zu einem Treffer kommt, ist es empfehlenswert, dies durch Eingabe von Geburtsdatum oder SVNR zu verifizieren. Da nur eine dieser Varianten bekannt ist, probieren Sie am Besten beide Varianten aus. Das Geburtsdatum muss exakt im Format "TT.MM.JJJJ" angegeben werden (Beispiel: 01.02.1995 für den 1. Februar 1995), bei Eingabe der Sozialversicherungsnummer müssen die ersten 4 Stellen (ohne Geburtsdatum) eingegeben werden. Falls bei Angabe aller 3 Werte (Vorname, Nachname, Geburtsdatum) ein Treffer angezeigt wird, sind Ihre Daten mit ziemlicher Sicherheit im Leak enthalten.</p>
+                <p class="mt-2 mb-2"><strong>Kontakt:</strong> mohteiwurahPh6siaF7leoriakoow2ie@proton.me</p>
+            </div>
+        </div>
+        <script src="/js/jquery-3.2.1.slim.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/js/hashes.js"></script>
+        <script src="/js/scripts.js"></script>
+    </body>
+</html>
